@@ -15,6 +15,7 @@ const workExperiences = [
       "Generated data visualizations using Matplotlib to communicate key findings.",
       "Automated data workflows and integrations using n8n for streamlined processing.",
     ],
+    skills: ["Python", "Data Science", "Matplotlib", "n8n", "EDA", "API Integration"], // ADD THIS
   },
   // Add more work experiences here
 ];
@@ -58,7 +59,7 @@ const projects = [
 // ACM-W Data
 const acmwActivities = [
   {
-    title: "Chairperson / Founding Member",
+    title: "Chairperson",
     period: "2023 - Present",
     highlights: [
       "Founded and established the ACM-W chapter at BITS Pilani Hyderabad",
@@ -96,68 +97,85 @@ const ThingsDetail = () => {
   };
 
   // Render Work Experience
-  if (id === "work-experience") {
-    return (
-      <div className="min-h-screen bg-background bg-grid-pattern">
-        <div className="max-w-4xl mx-auto px-4 py-24">
-          <button
-            onClick={handleBack}
-            className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8 font-mono text-sm group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Things I Did
-          </button>
+if (id === "work-experience") {
+  return (
+    <div className="min-h-screen bg-background bg-grid-pattern">
+      <div className="max-w-4xl mx-auto px-4 py-24">
+        <button
+          onClick={handleBack}
+          className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8 font-mono text-sm group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Things I Did
+        </button>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-mono text-sm text-primary mb-2">{"// experience"}</h2>
-            <h3 className="text-3xl font-bold mb-8 font-body">Work Experience</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="font-mono text-sm text-primary mb-2">{"// experience"}</h2>
+          <h3 className="text-3xl font-bold mb-8 font-body">Work Experience</h3>
 
-            <div className="space-y-12">
-              {workExperiences.map((exp, index) => (
-                <div key={index} className="relative pl-8 border-l-2 border-primary/30">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary animate-glow-pulse" />
+          <div className="space-y-12">
+            {workExperiences.map((exp, index) => (
+              <div key={index} className="relative pl-8 border-l-2 border-primary/30">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary animate-glow-pulse" />
 
-                  <div className="bg-card border border-border rounded-lg p-6 border-glow-cyan">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                      <div className="flex items-center gap-2">
-                        <Briefcase className="w-5 h-5 text-primary" />
-                        <h4 className="text-xl font-bold font-body">{exp.title}</h4>
-                      </div>
-                      <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs mt-2 sm:mt-0">
-                        <Calendar className="w-3 h-3" />
-                        <span>{exp.period}</span>
-                      </div>
+                <div className="bg-card border border-border rounded-lg p-6 border-glow-cyan">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <Briefcase className="w-5 h-5 text-primary" />
+                      <h4 className="text-xl font-bold font-body">{exp.title}</h4>
                     </div>
-
-                    <p className="text-primary font-mono text-sm mb-4">@ {exp.company} — {exp.location}</p>
-
-                    <div className="space-y-3">
-                      {exp.highlights.map((h, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-                          className="flex items-start gap-2 text-sm text-foreground/80"
-                        >
-                          <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                          <span>{h}</span>
-                        </motion.div>
-                      ))}
+                    <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs mt-2 sm:mt-0">
+                      <Calendar className="w-3 h-3" />
+                      <span>{exp.period}</span>
                     </div>
                   </div>
+
+                  <p className="text-primary font-mono text-sm mb-4">@ {exp.company} — {exp.location}</p>
+
+                  <div className="space-y-3 mb-6">
+                    {exp.highlights.map((h, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
+                        className="flex items-start gap-2 text-sm text-foreground/80"
+                      >
+                        <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                        <span>{h}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Skills/Tools Section */}
+                  {exp.skills && exp.skills.length > 0 && (
+                    <div>
+                      <h5 className="font-bold text-sm mb-3 text-muted-foreground">Tools</h5>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 text-xs font-mono bg-secondary border border-border rounded-full text-primary"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 // Render Projects
 if (id === "projects") {

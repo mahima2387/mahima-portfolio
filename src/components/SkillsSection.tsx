@@ -15,18 +15,20 @@ const skillCategories = [
   {
     category: "Frameworks",
     skills: [
-      { name: "Spring Boot", level: 85 },
-      { name: "React.js", level: 80 },
-      { name: "Angular", level: 70 },
-      { name: "Flask", level: 65 },
+      { name: "Pandas", level: 75 },
+      { name: "Numpy", level: 80 },
+      { name: "FastAPI", level: 70 },
+      { name: "n8n", level: 65 },
     ],
   },
   {
     category: "Tools & Databases",
     skills: [
-      { name: "Git", level: 85 },
+      { name: "Git", level: 75 },
       { name: "MySQL", level: 90 },
       { name: "PostgreSQL", level: 65 },
+      { name: "GitHub", level: 80 },
+      { name: "VS Code", level: 80 },
     ],
   },
 ];
