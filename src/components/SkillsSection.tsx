@@ -6,11 +6,10 @@ const skillCategories = [
     category: "Languages",
     skills: [
       { name: "Java", level: 90 },
-      { name: "Python", level: 80 },
-      { name: "C/C++", level: 75 },
-      { name: "JavaScript", level: 85 },
-      { name: "SQL", level: 85 },
-      { name: "MATLAB", level: 70 },
+      { name: "Python", level: 90 },
+      { name: "C/C++", level: 80 },
+      { name: "JavaScript", level: 50 },
+      { name: "SQL", level: 75 },
     ],
   },
   {
@@ -26,9 +25,8 @@ const skillCategories = [
     category: "Tools & Databases",
     skills: [
       { name: "Git", level: 85 },
-      { name: "MySQL", level: 80 },
-      { name: "PostgreSQL", level: 75 },
-      { name: "Docker", level: 60 },
+      { name: "MySQL", level: 90 },
+      { name: "PostgreSQL", level: 65 },
     ],
   },
 ];
