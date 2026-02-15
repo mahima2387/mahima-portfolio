@@ -6,10 +6,10 @@ const ExperienceSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   const highlights = [
-    "Developed scalable REST APIs using Java Spring Boot",
-    "Managed relational databases with complex SQL queries",
-    "Built dynamic front-end components with React.js and Angular",
-    "Collaborated with cross-functional teams using Agile methodologies",
+    "Developed an Interactive Data Insights Bot integrating Data Science workflows with query handling.",
+    "Designed and implemented data processing pipelines for extracting and transforming structured datasets.",
+    "Generated data visualizations using Matplotlib to communicate key findings.",
+    "Automated data workflows and integrations using n8n for streamlined processing.",
   ];
 
   return (
@@ -34,7 +34,7 @@ const ExperienceSection = () => {
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs mt-2 sm:mt-0">
                   <Calendar className="w-3 h-3" />
-                  <span>Jan 2025 – Jun 2025</span>
+                  <span>May 2025 – July 2025</span>
                 </div>
               </div>
 

@@ -4,14 +4,9 @@ import { useState } from "react";
 import { RefreshCw, Sparkles } from "lucide-react";
 
 const facts = [
-  "I can debug code faster than I can make instant noodles 🍜",
-  "My favorite data structure is a tree — because I love branching out 🌳",
-  "I once spent 3 hours fixing a bug that was caused by a missing semicolon 🤦",
-  "I think in algorithms when solving real-life problems 🧠",
-  "My CGPA is higher than my sleep hours per night 😴",
-  "I prefer dark mode in everything — IDE, browser, and life 🌙",
-  "I believe every problem can be solved with enough caffeine ☕",
-  "My first program printed 'Hello World' — and I've been hooked since 💻",
+  "I play football and I've twisted my ankle more times than I've broken my code. ",
+  "I love Beaches.",
+  "I also love farms.",
 ];
 
 const RandomSection = () => {
@@ -35,7 +30,7 @@ const RandomSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-mono text-sm text-primary mb-2">{"// random"}</h2>
-          <h3 className="text-3xl font-bold mb-8 font-body">Loading Screen Tips</h3>
+          <h3 className="text-3xl font-bold mb-8 font-body">Fun Facts</h3>
 
           <div className="bg-card border border-border rounded-lg p-8 text-center border-glow-cyan">
             <Sparkles className="w-8 h-8 text-primary mx-auto mb-4" />
@@ -55,7 +50,7 @@ const RandomSection = () => {
               className="inline-flex items-center gap-2 px-4 py-2 font-mono text-sm bg-secondary text-primary rounded hover:bg-secondary/80 transition-colors"
             >
               <RefreshCw className="w-4 h-4" />
-              Next Tip
+              Next Fact
             </button>
           </div>
         </motion.div>

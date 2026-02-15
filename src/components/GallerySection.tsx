@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState } from "react";
-import { X, ImageIcon } from "lucide-react";
+import { X } from "lucide-react";
 
-const placeholders = Array.from({ length: 6 }, (_, i) => ({
+// Images array pointing to your gallery folder
+const images = Array.from({ length: 6 }, (_, i) => ({
   id: i,
-  label: `memory_${i + 1}.jpg`,
+  src: `/gallery/memory_${i + 1}.jpg`,
+  label: `Memory ${i + 1}`,
 }));
 
 const GallerySection = () => {
@@ -24,7 +26,7 @@ const GallerySection = () => {
           <h3 className="text-3xl font-bold mb-8 font-body">Gallery</h3>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {placeholders.map((img, i) => (
+            {images.map((img, i) => (
               <motion.div
                 key={img.id}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -33,33 +35,42 @@ const GallerySection = () => {
                 className="group relative aspect-square bg-card border border-border rounded-lg overflow-hidden cursor-pointer hover:border-primary/50 transition-all duration-300"
                 onClick={() => setLightbox(img.id)}
               >
-                <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground">
-                  <ImageIcon className="w-10 h-10 mb-2 group-hover:text-primary transition-colors" />
-                  <span className="font-mono text-xs">{img.label}</span>
-                </div>
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src={img.src}
+                  alt={img.label}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             ))}
           </div>
-
-          <p className="text-center text-muted-foreground font-mono text-xs mt-6">
-            {"// Add your photos here — placeholders for now"}
-          </p>
         </motion.div>
       </div>
 
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
         >
-          <button onClick={() => setLightbox(null)} className="absolute top-6 right-6 text-foreground">
-            <X className="w-6 h-6" />
+          <button 
+            onClick={() => setLightbox(null)} 
+            className="absolute top-6 right-6 text-foreground hover:text-primary transition-colors z-10"
+          >
+            <X className="w-8 h-8" />
           </button>
-          <div className="w-[80vw] max-w-lg aspect-square bg-card border border-border rounded-lg flex flex-col items-center justify-center">
-            <ImageIcon className="w-16 h-16 text-muted-foreground mb-4" />
-            <span className="font-mono text-sm text-muted-foreground">memory_{lightbox + 1}.jpg</span>
-          </div>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="max-w-6xl max-h-[90vh] relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={images[lightbox].src}
+              alt={images[lightbox].label}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg border-2 border-primary/50 shadow-2xl"
+            />
+          </motion.div>
         </div>
       )}
     </section>

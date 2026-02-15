@@ -8,7 +8,7 @@ import ActivitiesSection from "@/components/ActivitiesSection";
 import SkillsSection from "@/components/SkillsSection";
 import GallerySection from "@/components/GallerySection";
 import RandomSection from "@/components/RandomSection";
-import ResumeSection from "@/components/ResumeSection";
+//import ResumeSection from "@/components/ResumeSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -28,7 +28,7 @@ const Index = () => {
         <SkillsSection />
         <GallerySection />
         <RandomSection />
-        <ResumeSection />
+        
         <ContactSection />
       </main>
       <Footer />

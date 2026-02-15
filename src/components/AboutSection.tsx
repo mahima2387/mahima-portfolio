@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { GraduationCap, MapPin, Award } from "lucide-react";
+import { GraduationCap, MapPin, Award, Download } from "lucide-react"; // Added Download
 import { useEffect, useState } from "react";
 
 const AnimatedCounter = ({ target, label }: { target: number; label: string }) => {
@@ -58,9 +58,9 @@ const AboutSection = () => {
             <div className="font-mono text-sm leading-relaxed space-y-3">
               <p className="text-accent">$ cat profile.txt</p>
               <p className="text-foreground/90">
-                Motivated Computer Science and Mathematics student at BITS Pilani, Hyderabad Campus. 
-                Passionate about software development, with hands-on experience in building scalable web applications, 
-                REST APIs, and database management. Strong leadership background with experience chairing technical communities.
+                I'm Mahima, a Computer Science and Mathematics student, who loves building things that make sense and make impact.
+                I enjoy blending logic with creativity, whether it's through code, analytics or design.
+                Currently exploring tech, problem-solving and everything in between.
               </p>
             </div>
 
@@ -71,17 +71,31 @@ const AboutSection = () => {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>BITS Pilani, Hyderabad</span>
+                <span>BITS Pilani, Hyderabad Campus</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Award className="w-4 h-4 text-primary" />
                 <span>2023 – 2028</span>
               </div>
+              {/* RESUME BUTTON ADDED HERE */}
+              <a 
+                href="/resume.pdf" 
+                download
+                className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors group"
+              >
+                <Download className="w-4 h-4 group-hover:animate-bounce" />
+                <span>Download Resume</span>
+              </a>
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-6 mt-8">
-            <AnimatedCounter target={8.71} label="CGPA" />
+            <div className="text-center">
+              <div className="text-3xl font-bold font-mono text-primary text-glow-cyan">
+                v3.0
+              </div>
+              <div className="text-xs text-muted-foreground mt-1 font-mono">Career</div>
+            </div>
             <AnimatedCounter target={4} label="Projects" />
             <AnimatedCounter target={3} label="Leadership Roles" />
           </div>
