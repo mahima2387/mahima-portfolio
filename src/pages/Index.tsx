@@ -1,0 +1,39 @@
+import ParticleBackground from "@/components/ParticleBackground";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ActivitiesSection from "@/components/ActivitiesSection";
+import SkillsSection from "@/components/SkillsSection";
+import GallerySection from "@/components/GallerySection";
+import RandomSection from "@/components/RandomSection";
+import ResumeSection from "@/components/ResumeSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+
+
+
+const Index = () => {
+  return (
+    <div className="relative min-h-screen bg-background bg-grid-pattern">
+      <ParticleBackground />
+      <Navbar />
+      <main className="relative z-10">
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <ActivitiesSection />
+        <SkillsSection />
+        <GallerySection />
+        <RandomSection />
+        <ResumeSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
