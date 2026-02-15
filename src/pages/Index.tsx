@@ -2,17 +2,12 @@ import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import ActivitiesSection from "@/components/ActivitiesSection";
+import ThingsIDidSection from "@/components/ThingsIDidSection";
 import SkillsSection from "@/components/SkillsSection";
 import GallerySection from "@/components/GallerySection";
 import RandomSection from "@/components/RandomSection";
-//import ResumeSection from "@/components/ResumeSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-
-
 
 const Index = () => {
   return (
@@ -22,13 +17,10 @@ const Index = () => {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <ActivitiesSection />
+        <ThingsIDidSection />
         <SkillsSection />
         <GallerySection />
         <RandomSection />
-        
         <ContactSection />
       </main>
       <Footer />
