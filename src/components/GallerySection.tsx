@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 // Images array pointing to your gallery folder
 const images = Array.from({ length: 6 }, (_, i) => ({
   id: i,
-  src: `/gallery/memory_${i + 1}.jpg`,
+  src: `${import.meta.env.BASE_URL}gallery/memory_${i + 1}.jpg`,
   label: `Memory ${i + 1}`,
 }));
 

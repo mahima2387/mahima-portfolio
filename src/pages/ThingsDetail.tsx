@@ -34,7 +34,7 @@ const projects = [
     name: "Queueing System Analysis",
     desc: "Collected real-world data from the Library Stationar Shop and modeled the system using M/M/1 queueing theory and proposed operational improvements to reduce customer waiting time and congestion.",
     tech: ["Operations Research", "Probability", "Statistics"],
-    link: "/reports/queueing-system-analysis.pdf",
+    link: `${import.meta.env.BASE_URL}reports/queueing-system-analysis.pdf`,
     hasLink: true,
     linkType: "pdf",
   },
@@ -50,7 +50,7 @@ const projects = [
     name: "Algebraic Structures and Proof-Based Reasoning",
     desc: "Explored core algebraic structures like groups, rings, fields and developed structured approaches to constructing and validating mathematical proofs.",
     tech: ["Rings", "Groups", "Visualization"],
-    link: "/reports/algebraic-structures-visualizer.pdf",
+    link: `${import.meta.env.BASE_URL}reports/algebraic-structures-visualizer.pdf`,
     hasLink: true,
     linkType: "pdf",
   },
@@ -102,10 +102,10 @@ const acmwData = {
     },
   ],
   gallery: [
-    { src: "/acm-w-gallery/event1.jpg", caption: "App Dev Workshop 2025" },
-    { src: "/acm-w-gallery/event2.jpg", caption: "Attended the ACM Summit 2025" },
-    { src: "/acm-w-gallery/event3.jpg", caption: "CodeFLIX 2025" },
-    { src: "/acm-w-gallery/event5.jpg", caption: "Team ACM-W" },
+    { src: `${import.meta.env.BASE_URL}acm-w-gallery/event1.jpg`, caption: "App Dev Workshop 2025" },
+    { src: `${import.meta.env.BASE_URL}acm-w-gallery/event2.jpg`, caption: "Attended the ACM Summit 2025" },
+    { src: `${import.meta.env.BASE_URL}acm-w-gallery/event3.jpg`, caption: "CodeFLIX 2025" },
+    { src: `${import.meta.env.BASE_URL}acm-w-gallery/event5.jpg`, caption: "Team ACM-W" },
   ],
 };
 
@@ -142,13 +142,12 @@ const swmcData = {
     },
   ],
   gallery: [
-    { src: "/swmc-gallery/event1.jpg", caption: "LinkedIn IRL 2025" },
-    { src: "/swmc-gallery/event2.jpg", caption: "PS-2 Unplugged 2026" },
-    { src: "/swmc-gallery/event3.jpg", caption: "BITSAA Global Meet 2026" },
+    { src: `${import.meta.env.BASE_URL}swmc-gallery/event1.jpg`, caption: "LinkedIn IRL 2025" },
+    { src: `${import.meta.env.BASE_URL}swmc-gallery/event2.jpg`, caption: "PS-2 Unplugged 2026" },
+    { src: `${import.meta.env.BASE_URL}swmc-gallery/event3.jpg`, caption: "BITSAA Global Meet 2026" },
   ],
 };
 
-// ADD THIS COMPONENT DECLARATION
 const ThingsDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -160,7 +159,6 @@ const ThingsDetail = () => {
     }, 100);
   };
 
-  // Safety check
   if (!id) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -177,7 +175,6 @@ const ThingsDetail = () => {
     );
   }
 
-  // Render Work Experience
   if (id === "work-experience") {
     return (
       <div className="min-h-screen bg-background bg-grid-pattern">
@@ -257,7 +254,6 @@ const ThingsDetail = () => {
     );
   }
 
-  // Render Projects
   if (id === "projects") {
     return (
       <div className="min-h-screen bg-background bg-grid-pattern">
@@ -323,7 +319,6 @@ const ThingsDetail = () => {
     );
   }
 
-  // Render ACM-W
   if (id === "acm-w") {
     const [lightbox, setLightbox] = useState<number | null>(null);
 
@@ -466,7 +461,6 @@ const ThingsDetail = () => {
     );
   }
 
-  // Render SWMC
   if (id === "swmc") {
     const [lightbox, setLightbox] = useState<number | null>(null);
 
@@ -609,7 +603,6 @@ const ThingsDetail = () => {
     );
   }
 
-  // Fallback
   return (
     <div className="min-h-screen bg-background flex items-center justify-center">
       <div className="text-center">

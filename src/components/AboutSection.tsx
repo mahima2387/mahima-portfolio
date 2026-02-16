@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { GraduationCap, MapPin, Award, Download } from "lucide-react"; // Added Download
+import { GraduationCap, MapPin, Award, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const AnimatedCounter = ({ target, label }: { target: number; label: string }) => {
@@ -77,14 +77,15 @@ const AboutSection = () => {
                 <Award className="w-4 h-4 text-primary" />
                 <span>2023 – 2028</span>
               </div>
-              {/* RESUME BUTTON ADDED HERE */}
+              {/* VIEW RESUME BUTTON */}
               <a 
-                href="/resume.pdf" 
-                download
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors group"
               >
-                <Download className="w-4 h-4 group-hover:animate-bounce" />
-                <span>Download Resume</span>
+                <ExternalLink className="w-4 h-4 group-hover:animate-bounce" />
+                <span>View Resume</span>
               </a>
             </div>
           </div>
